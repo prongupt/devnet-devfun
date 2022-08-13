@@ -1,2 +1,2 @@
 I'm a git wizard now!
-
+Adding a line to this text for a Git push test
