@@ -3,6 +3,8 @@ import json
 from pprint import pprint
 
 
+"""This section is for demonstrating serializing and deserializing function for YAML data format using the YAML 
+python library"""
 # with open('yaml_example.yml', 'r') as file:
 #     print("Converting the YAML file into a Python object ('dictionary')")
 #     users = yaml.safe_load(file)
@@ -16,7 +18,8 @@ from pprint import pprint
 #     yaml.dump(users, file, default_flow_style=False)
 
 
-
+"""This section is for demonstrating serializing and deserializing function for JSON data format using the in-built 
+JSON python library"""
 with open('json_example.yml', 'r') as file:
     print("Converting the YAML file into a Python object ('dictionary')")
     users = json.load(file)
