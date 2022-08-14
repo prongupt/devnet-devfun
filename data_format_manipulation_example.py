@@ -1,8 +1,8 @@
-import yaml
-import json
 from pprint import pprint
 
 
+
+import yaml
 """This section is for demonstrating serializing and deserializing function for YAML data format using the YAML 
 python library"""
 # with open('yaml_example.yml', 'r') as file:
@@ -17,18 +17,35 @@ python library"""
 # with open ('yaml_edited_example.yml', 'w') as file:
 #     yaml.dump(users, file, default_flow_style=False)
 
+import json
+# """This section is for demonstrating serializing and deserializing function for JSON data format using the in-built
+# JSON python library"""
+# with open('json_example.yml', 'r') as file:
+#     print("Converting the YAML file into a Python object ('dictionary')")
+#     users = json.load(file)
+#
+# for each_user in users:
+#     for info in (users[each_user]):
+#         users[each_user]['location']['city'] = "Dallas"
+#     print("----------")
+# pprint(users)
+#
+# with open ('json_edited_example.yml', 'w') as file:
+#     json.dump(users, file, indent=4)
 
+
+import xml.etree.ElementTree as ET
 """This section is for demonstrating serializing and deserializing function for JSON data format using the in-built 
 JSON python library"""
-with open('json_example.yml', 'r') as file:
-    print("Converting the YAML file into a Python object ('dictionary')")
-    users = json.load(file)
+with open('xml_example.xml', 'r') as file:
+    mytree = ET.parse(file)
+    myroot = mytree.getroot()
 
-for each_user in users:
-    for info in (users[each_user]):
-        users[each_user]['location']['city'] = "Dallas"
-    print("----------")
-pprint(users)
+user = myroot.find('user')
+print(user.find('name').text)
+for role in user.findall('roles'):
+    print(role.text)
 
-with open ('json_edited_example.yml', 'w') as file:
-    json.dump(users, file, indent=4)
+user.find('location').find('city').text = "Dallas"
+with open('xml_edited_example.xml', 'w') as file:
+    mytree.write(file, encoding='Unicode')
