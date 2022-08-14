@@ -35,13 +35,38 @@ import json
 
 
 import xml.etree.ElementTree as ET
-"""This section is for demonstrating serializing and deserializing function for JSON data format using the in-built 
-JSON python library"""
+"""This section is for demonstrating serializing and deserializing function for XML data format using the ElementTree 
+python library"""
 with open('xml_example.xml', 'r') as file:
     mytree = ET.parse(file)
     myroot = mytree.getroot()
 
 user = myroot.find('user')
+print(user.find('name').text)
+print('Tags in the XML tree:')
+for element in myroot:
+    print(element.tag)
+for role in user.findall('roles'):
+    print(role.text)
+
+user.find('location').find('city').text = "Dallas"
+with open('xml_edited_example.xml', 'w') as file:
+    mytree.write(file, encoding='Unicode')
+
+
+
+"""
+Need to look into the MiniDOM XML parser
+"""
+import xml.dom.minidom as MD
+"""This section is for demonstrating serializing and deserializing function for XML data format using the MiniDom
+python library"""
+with open('xml_example.xml', 'r') as file:
+    dom = MD.parse(file)
+
+print("The tags in the XML:")
+for node in dom.childNodes:
+    printTags
 print(user.find('name').text)
 print('Tags in the XML tree:')
 for element in myroot:

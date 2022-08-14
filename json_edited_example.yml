@@ -2,7 +2,7 @@
     "user1": {
         "name": "john",
         "location": {
-            "city": "Austin",
+            "city": "Dallas",
             "state": "TX"
         },
         "roles": [
@@ -13,7 +13,7 @@
     "user2": {
         "name": "tony",
         "location": {
-            "city": "Austin",
+            "city": "Dallas",
             "state": "TX"
         },
         "roles": [

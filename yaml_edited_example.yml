@@ -1,0 +1,16 @@
+user1:
+  location:
+    city: Dallas
+    state: TX
+  name: john
+  roles:
+  - admin
+  - user
+user2:
+  location:
+    city: Dallas
+    state: TX
+  name: tony
+  roles:
+  - admin
+  - operator
