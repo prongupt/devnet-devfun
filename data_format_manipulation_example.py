@@ -43,6 +43,9 @@ with open('xml_example.xml', 'r') as file:
 
 user = myroot.find('user')
 print(user.find('name').text)
+print('Tags in the XML tree:')
+for element in myroot:
+    print(element.tag)
 for role in user.findall('roles'):
     print(role.text)
 
