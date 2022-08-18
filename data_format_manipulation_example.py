@@ -56,7 +56,8 @@ with open('xml_edited_example.xml', 'w') as file:
 
 
 """
-Need to look into the MiniDOM XML parser
+Need to look into the MiniDOM XML parser - figure out how to complete this part. Also the lab example on the 
+ondemandlearning Cisco website is great. Potentially look at completing that lab again.
 """
 import xml.dom.minidom as MD
 """This section is for demonstrating serializing and deserializing function for XML data format using the MiniDom
